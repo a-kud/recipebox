@@ -11,3 +11,9 @@ Setup
 ```
 npm install
 ```
+
+Compile developer build
+---
+
+```
+npm run compile
