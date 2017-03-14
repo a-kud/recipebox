@@ -1,13 +1,13 @@
 "use strict";
 
-var express = require('express');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.js');
+var express = require("express");
+var webpack = require("webpack");
+var webpackDevMiddleware = require("webpack-dev-middleware");
+var webpackHotMiddleware = require("webpack-hot-middleware");
+var webpackConfig = require("./webpack.config.js");
+
 var app = express();
 var compiler = webpack(webpackConfig);
-var webpackHotMiddleware = require("webpack-hot-middleware");
-
 
 app.set("views", __dirname + "/src/views");
 app.set("view engine", "pug");
@@ -15,7 +15,6 @@ app.set("view engine", "pug");
 app.get("/", function (req, res) {
   res.render("index");
 })
-
 
 app.use(webpackDevMiddleware(compiler, {
     hot: true,
