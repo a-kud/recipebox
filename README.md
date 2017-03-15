@@ -12,8 +12,16 @@ Setup
 npm install
 ```
 
-Compile developer build
+Compile development build
 ---
 
 ```
 npm run compile
+```
+
+Start the development server
+---
+
+```
+npm start
+```
