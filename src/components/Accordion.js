@@ -7,3 +7,5 @@ class Accordion extends React.Component {
         <div className="panel"></div>
     );
 }
+
+export default Accordion;
