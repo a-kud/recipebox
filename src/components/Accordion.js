@@ -2,10 +2,14 @@ import React from "react";
 
 class Accordion extends React.Component {
 
-    return (
-        <button className="accordion"></button>
-        <div className="panel"></div>
-    );
+    render() {
+        return (
+            <div>
+                <button className="accordion"></button>
+                <div className="panel"></div>
+            </div>
+        );
+    };
 }
 
 export default Accordion;
