@@ -15,7 +15,6 @@
     "babel-core": "^6.24.0",
     "babel-loader": "latest",
     "babel-preset-env": "^1.4.0",
-    "babel-preset-latest": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "express": "^4.15.2",
     "node-sass": "^4.5.2",
