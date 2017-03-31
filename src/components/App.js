@@ -3,7 +3,11 @@ import Accordion from "./Accordion";
 
 class RecipeBox extends React.Component {
     render() {
-        return (<Accordion />);
+        return (
+            <div className="background">
+                <Accordion />
+            </div>
+        );
     };
 }
 
