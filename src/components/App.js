@@ -1,11 +1,13 @@
 import React from "react";
 import Accordion from "./Accordion";
+import AddButton from "./buttons/AddButton";
 
 class RecipeBox extends React.Component {
     render() {
         return (
-            <div className="background">
-                <Accordion />
+            <div>
+                <div className="background"></div>
+                <AddButton />
             </div>
         );
     };
