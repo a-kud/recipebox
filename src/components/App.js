@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from "./Accordion";
 import AddButton from "./buttons/AddButton";
+import AddModal from "./AddModal";
 
 class RecipeBox extends React.Component {
     render() {
@@ -8,6 +9,7 @@ class RecipeBox extends React.Component {
             <div>
                 <div className="background"></div>
                 <AddButton />
+                <AddModal />
             </div>
         );
     };
