@@ -21,7 +21,8 @@ class AddModal extends React.Component {
   }
 
   render() {
-    return <div  onClick={() => this.handleClick() }>
+    return <div>
+    <button  onClick={() => this.handleClick() }> Add Recipe </button>
     modal
       {
         this.state.isShowingModal &&
