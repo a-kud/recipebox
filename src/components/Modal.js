@@ -1,7 +1,7 @@
 import React from 'react';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 
-class AddModal extends React.Component {
+class Modal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +23,6 @@ class AddModal extends React.Component {
   render() {
     return <div>
     <button  onClick={() => this.handleClick() }> Add Recipe </button>
-    modal
       {
         this.state.isShowingModal &&
         <ModalContainer onClose={() => this.handleClose() }>
@@ -37,4 +36,4 @@ class AddModal extends React.Component {
   }
 }
 
-export default AddModal;
+export default Modal;

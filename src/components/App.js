@@ -1,14 +1,13 @@
 import React from "react";
 import Accordion from "./Accordion";
-// import AddButton from "./buttons/AddButton";
-import AddModal from "./AddModal";
+import Modal from "./Modal";
 
 class RecipeBox extends React.Component {
     render() {
         return (
             <div>
                 <div className="background"></div>
-                <AddModal />
+                <Modal />
 
             </div>
         );
