@@ -1,5 +1,5 @@
-import React from 'react';
-import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+import React from "react";
+import {ModalContainer, ModalDialog} from "react-modal-dialog";
 
 class Modal extends React.Component {
     constructor(props) {
