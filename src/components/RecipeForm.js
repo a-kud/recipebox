@@ -6,13 +6,14 @@ class RecipeForm extends React.Component {
         return (
             <form>
                 <h1> Add Your Recipe </h1>
-                <br>
+                <hr/>
                 <label> Recipe
-                    <input type="text"/>
+                    <input type="text" required/>
                 </label>
                 <label> Ingridients
-                    <input type="textarea" placeholder="Comma,separated"/>
+                    <input type="textarea" placeholder="Comma,separated" required/>
                 </label>
+                <input type="submit" value="Add Recipe"/>
             </form>
         );
     }

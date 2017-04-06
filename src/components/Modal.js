@@ -1,4 +1,5 @@
 import React from "react";
+import RecipeForm from "./RecipeForm";
 import {ModalContainer, ModalDialog} from "react-modal-dialog";
 
 //opens up modal window with add button
@@ -28,8 +29,7 @@ class Modal extends React.Component {
         this.state.isShowingModal &&
         <ModalContainer onClose={() => this.handleClose() }>
           <ModalDialog onClose={ () => this.handleClose() }>
-            <h1>Dialog Content</h1>
-            <p>More Content. Anything goes here</p>
+            <RecipeForm />
           </ModalDialog>
         </ModalContainer>
       }
