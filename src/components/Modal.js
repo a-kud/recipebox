@@ -1,6 +1,7 @@
 import React from "react";
 import {ModalContainer, ModalDialog} from "react-modal-dialog";
 
+//opens up modal window with add button
 class Modal extends React.Component {
     constructor(props) {
         super(props);
