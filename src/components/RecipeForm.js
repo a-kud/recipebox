@@ -4,7 +4,7 @@ class RecipeForm extends React.Component {
 
     render() {
         return (
-            <form>
+            <form id="recipe_submit">
                 <h1> Add Your Recipe </h1>
                 <hr/>
                 <label> Recipe
