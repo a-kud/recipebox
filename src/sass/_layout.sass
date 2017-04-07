@@ -1,4 +1,4 @@
-.container
+.container, #recipe_submit, #recipe_submit label
     display: flex
     justify-content: center
 
@@ -6,3 +6,12 @@
     min-width: 50vw
     min-height: 3rem
     background-color: rgba(182, 187, 196, 0.2)
+
+#recipe_submit, #recipe_submit label
+    flex-flow: column nowrap
+
+hr
+    width: 100%
+
+input[type="submit"]
+    align-self: flex-end
