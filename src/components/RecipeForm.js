@@ -1,6 +1,9 @@
 import React from "react";
 
 class RecipeForm extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
@@ -8,10 +11,10 @@ class RecipeForm extends React.Component {
                 <h1> Add Your Recipe </h1>
                 <hr/>
                 <label> Recipe
-                    <input type="text" required/>
+                    <input type="text" value={this.props.recipe.name} required/>
                 </label>
                 <label> Ingridients
-                    <input type="textarea" placeholder="Comma,separated" required/>
+                    <textarea rows="4" placeholder="Comma,separated" required></textarea>
                 </label>
                 <input type="submit" value="Add Recipe"/>
             </form>
