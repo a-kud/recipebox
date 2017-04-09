@@ -3,6 +3,11 @@ import React from "react";
 class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.props.onRecipeChange(e.target.value);
     }
 
     render() {
@@ -11,7 +16,10 @@ class RecipeForm extends React.Component {
                 <h1> Add Your Recipe </h1>
                 <hr/>
                 <label> Recipe
-                    <input type="text" value={this.props.recipe.name} required/>
+                    <input type="text"
+                           value={this.props.recipe.name}
+                           onChange={this.handleChange}
+                           required/>
                 </label>
                 <label> Ingridients
                     <textarea rows="4" placeholder="Comma,separated" required></textarea>

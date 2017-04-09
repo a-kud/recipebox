@@ -12,6 +12,7 @@ class Modal extends React.Component {
 
       this.handleClick = this.handleClick.bind(this);
       this.handleClose = this.handleClose.bind(this);
+      this.handleRecipeChange = this.handleRecipeChange.bind(this);
     }
 
   handleClick() {
@@ -22,6 +23,10 @@ class Modal extends React.Component {
       this.setState({isShowingModal: false});
   }
 
+  handleRecipeChange(e) {
+      console.log(e);
+  }
+
   render() {
     return <div>
     <button  onClick={() => this.handleClick() }> Add Recipe </button>
@@ -29,7 +34,7 @@ class Modal extends React.Component {
         this.state.isShowingModal &&
         <ModalContainer onClose={() => this.handleClose() }>
           <ModalDialog onClose={ () => this.handleClose() }>
-            <RecipeForm recipe={this.props.recipe}/>
+            <RecipeForm recipe={this.props.recipe} onRecipeChange={this.handleRecipeChange}/>
           </ModalDialog>
         </ModalContainer>
       }
