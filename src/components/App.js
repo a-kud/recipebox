@@ -11,13 +11,21 @@ class RecipeBox extends React.Component {
                 ingridients: [],
             },
         };
+
+        this.handleRecipeChange = this.handleRecipeChange.bind(this);
     }
+
+    handleRecipeChange(e) {
+        const name = this.state.recipe.name;
+        this.setState({name: e});
+    }
+
     render() {
         const recipe = this.state.recipe;
         return (
             <div>
                 <div className="background"></div>
-                <Modal recipe={recipe}/>
+                <Modal recipe={recipe} onRecipeChange={this.handleRecipeChange}/>
 
             </div>
         );

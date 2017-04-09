@@ -17,7 +17,6 @@ class RecipeForm extends React.Component {
                 <hr/>
                 <label> Recipe
                     <input type="text"
-                           value={this.props.recipe.name}
                            onChange={this.handleChange}
                            required/>
                 </label>
