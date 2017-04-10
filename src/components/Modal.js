@@ -24,7 +24,7 @@ class Modal extends React.Component {
   }
 
   handleRecipeChange(e) {
-      console.log(e);
+      this.props.onRecipeChange(e);
   }
 
   render() {

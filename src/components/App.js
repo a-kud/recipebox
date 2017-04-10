@@ -17,6 +17,7 @@ class RecipeBox extends React.Component {
 
     handleRecipeChange(e) {
         const name = this.state.recipe.name;
+        //conole.log(name)
         this.setState({name: e});
     }
 
