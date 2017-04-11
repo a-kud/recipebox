@@ -21,7 +21,9 @@ class RecipeForm extends React.Component {
                            required/>
                 </label>
                 <label> Ingridients
-                    <textarea rows="4" placeholder="Comma,separated" required></textarea>
+                    <textarea rows="4"
+                              placeholder="Comma,separated"
+                              required></textarea>
                 </label>
                 <input type="submit" value="Add Recipe"/>
             </form>
