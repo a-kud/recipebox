@@ -7,7 +7,7 @@ class RecipeForm extends React.Component {
     }
 
     handleChange(e) {
-        this.props.onRecipeChange(e.target.value);
+        this.props.onRecipeChange(e);
     }
 
     render() {
@@ -15,13 +15,16 @@ class RecipeForm extends React.Component {
             <form id="recipe_submit">
                 <h1> Add Your Recipe </h1>
                 <hr/>
-                <label> Recipe
-                    <input type="text"
+                <label htmlFor="recipe_name"> Recipe
+                    <input id="recipe_name"
+                           type="text"
                            onChange={this.handleChange}
                            required/>
                 </label>
-                <label> Ingridients
-                    <textarea rows="4"
+                <label htmlFor="ingridients"> Ingridients
+                    <textarea id="ingridients"
+                              rows="4"
+                              onChange={this.handleChange}
                               placeholder="Comma,separated"
                               required></textarea>
                 </label>

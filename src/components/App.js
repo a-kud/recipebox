@@ -17,8 +17,8 @@ class RecipeBox extends React.Component {
 
     handleRecipeChange(e) {
         const name = this.state.recipe.name;
-        //conole.log(name)
-        this.setState({name: e});
+        console.log(e.target)
+        this.setState({name: e.target.value});
     }
 
     render() {
