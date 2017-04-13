@@ -16,9 +16,14 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeChange(e) {
-        const name = this.state.recipe.name;
-        console.log(e.target)
-        this.setState({name: e.target.value});
+        const name = this.state.recipe.name,
+              ingridients = this.state.recipe.ingridients;
+        if (e.target.id == "recipe_name") {
+            this.setState({name: e.target.value});
+        } else {
+            this.setState({ingridients: e.target.value.split(",")});
+        }
+
     }
 
     render() {
