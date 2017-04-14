@@ -28,7 +28,7 @@ class RecipeForm extends React.Component {
                               placeholder="Comma,separated"
                               required></textarea>
                 </label>
-                <input type="submit" value="Add Recipe"/>
+                <input type="button" value="Add Recipe" onClick={this.props.handleFormSubmit}/>
             </form>
         );
     }

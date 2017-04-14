@@ -14,10 +14,10 @@ class Accordion extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="recipe_accordion">
                 <button className="accordion" onClick={(e) => this.handleClick(e)}></button>
                 <div className="panel">
-                    <p>sdfdfsgsgfhjjk</p>
+                    <p className="recipe_ingredients">sdfdfsgsgfhjjk</p>
                 </div>
             </div>
         );

@@ -30,7 +30,10 @@ class RecipeBox extends React.Component {
         const recipe = this.state.recipe;
         return (
             <div>
-                <div className="background"></div>
+                <div className="background">
+                    <Accordion />
+                    <Accordion />
+                </div>
                 <Modal recipe={recipe} onRecipeChange={this.handleRecipeChange}/>
 
             </div>
