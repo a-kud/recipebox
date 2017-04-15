@@ -4,7 +4,7 @@ class Accordion extends React.Component {
 
     handleClick(e) {
         let panel = e.target.nextElementSibling;
-        console.log(panel.scrollHeight);
+        
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
         } else {
