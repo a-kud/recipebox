@@ -19,8 +19,9 @@ class Modal extends React.Component {
       this.setState({isShowingModal: true});
   }
 
-  handleClose() {
+  handleClose(e) {
       this.setState({isShowingModal: false});
+      this.props.onRecipeSubmit(e);
   }
 
   handleRecipeChange(e) {

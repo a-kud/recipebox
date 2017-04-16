@@ -10,9 +10,11 @@ class RecipeBox extends React.Component {
                 name: "",
                 ingridients: [],
             },
+            recipeSubmitted: false,
         };
 
         this.handleRecipeChange = this.handleRecipeChange.bind(this);
+        this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
     }
 
     handleRecipeChange(e) {
@@ -26,6 +28,12 @@ class RecipeBox extends React.Component {
 
     }
 
+    handleRecipeSubmit(e) {
+        console.log(this.state)
+        const submitted = this.state.recipeSubmitted;
+        this.setState({recipeSubmitted: !submitted});
+    }
+
     render() {
         const recipe = this.state.recipe;
         return (
@@ -34,7 +42,8 @@ class RecipeBox extends React.Component {
                     <Accordion />
                     <Accordion />
                 </div>
-                <Modal recipe={recipe} onRecipeChange={this.handleRecipeChange}/>
+                <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
+                                    onRecipeChange={this.handleRecipeChange}/>
 
             </div>
         );
