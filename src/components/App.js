@@ -39,17 +39,31 @@ class RecipeBox extends React.Component {
               ingridients = this.state.recipe.ingridients,
               recipe = this.state.recipe;
 
-        return (
-            <div>
-                <div className="background">
-                    <Accordion recipeName={name}
-                               recipeIngredients={ingridients} />
-                </div>
-                <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
-                                    onRecipeChange={this.handleRecipeChange}/>
+        if (this.state.recipeSubmitted) {
+            return (
+                <div>
+                    <div className="background">
+                        <Accordion recipeName={name}
+                                   recipeIngredients={ingridients} />
+                    </div>
+                    <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
+                                        onRecipeChange={this.handleRecipeChange}/>
 
-            </div>
-        );
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <div className="background">
+                    </div>
+                    <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
+                                        onRecipeChange={this.handleRecipeChange}/>
+
+                </div>
+            );
+        }
+
     };
 }
 

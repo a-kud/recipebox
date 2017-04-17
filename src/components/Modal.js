@@ -13,20 +13,24 @@ class Modal extends React.Component {
       this.handleClick = this.handleClick.bind(this);
       this.handleClose = this.handleClose.bind(this);
       this.handleRecipeChange = this.handleRecipeChange.bind(this);
+      this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
     }
 
-  handleClick() {
+    handleClick() {
       this.setState({isShowingModal: true});
-  }
+    }
 
-  handleClose(e) {
+    handleClose(e) {
       this.setState({isShowingModal: false});
-      this.props.onRecipeSubmit(e);
-  }
+    }
 
-  handleRecipeChange(e) {
+    handleRecipeChange(e) {
       this.props.onRecipeChange(e);
-  }
+    }
+
+    handleRecipeSubmit(e) {
+      this.props.onRecipeSubmit(e);
+    }
 
   render() {
     return <div>
@@ -37,7 +41,7 @@ class Modal extends React.Component {
           <ModalDialog onClose={ () => this.handleClose() }>
             <RecipeForm recipe={this.props.recipe}
                         onRecipeChange={this.handleRecipeChange}
-                        handleFormSubmit={this.handleClose}/>
+                        handleFormSubmit={this.handleRecipeSubmit}/>
           </ModalDialog>
         </ModalContainer>
       }
