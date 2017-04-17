@@ -4,7 +4,7 @@ class Accordion extends React.Component {
 
     handleClick(e) {
         let panel = e.target.nextElementSibling;
-        
+
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
         } else {
@@ -15,9 +15,9 @@ class Accordion extends React.Component {
     render() {
         return (
             <div className="recipe_accordion">
-                <button className="accordion" onClick={(e) => this.handleClick(e)}></button>
+                <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
                 <div className="panel">
-                    <p className="recipe_ingredients">sdfdfsgsgfhjjk</p>
+                    <p className="recipe_ingredients">{this.props.recipeIngredients}</p>
                 </div>
             </div>
         );

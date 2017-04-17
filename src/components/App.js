@@ -36,7 +36,8 @@ class RecipeBox extends React.Component {
 
     render() {
         const name = this.state.recipe.name,
-              ingridients = this.state.recipe.ingridients;
+              ingridients = this.state.recipe.ingridients,
+              recipe = this.state.recipe;
 
         return (
             <div>
