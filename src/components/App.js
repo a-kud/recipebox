@@ -35,12 +35,14 @@ class RecipeBox extends React.Component {
     }
 
     render() {
-        const recipe = this.state.recipe;
+        const name = this.state.recipe.name,
+              ingridients = this.state.recipe.ingridients;
+
         return (
             <div>
                 <div className="background">
-                    <Accordion />
-                    <Accordion />
+                    <Accordion recipeName={name}
+                               recipeIngredients={ingridients} />
                 </div>
                 <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
                                     onRecipeChange={this.handleRecipeChange}/>
