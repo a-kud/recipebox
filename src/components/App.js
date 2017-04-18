@@ -29,14 +29,15 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeSubmit(e) {
-        console.log(this.state)
         const submitted = this.state.recipeSubmitted;
-        this.setState({recipeSubmitted: !submitted});
+        this.setState({recipeSubmitted: true});
     }
 
     createRecipe() {
         const name = this.state.recipe.name,
               ingridients = this.state.recipe.ingridients;
+              console.log(this.state.recipe.name)
+              console.warn(this.state.recipe.ingridients)
 
         return (
             <Accordion recipeName={name}
