@@ -6,10 +6,12 @@ class RecipeBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recipe: {
+            /*recipe: {
                 name: "",
                 ingridients: [],
-            },
+            },*/
+            recipesAdded: 0,
+            recipes: [],
             recipeSubmitted: false,
         };
 
@@ -18,31 +20,61 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeChange(e) {
-        const name = this.state.recipe.name,
-              ingridients = this.state.recipe.ingridients;
-        if (e.target.id == "recipe_name") {
-            this.setState({name: e.target.value});
-        } else {
-            this.setState({ingridients: e.target.value.split(",")});
-        }
+        // const name = this.state.recipe.name,
+        //       ingridients = this.state.recipe.ingridients;
 
+    /*    if (e.target.id == "recipe_name") {
+            this.setState({recipes.name: e.target.value});
+        } else {
+            this.setState({recipes.ingridients: e.target.value.split(",")});
+        }
+*/
     }
 
     handleRecipeSubmit(e) {
-        const submitted = this.state.recipeSubmitted;
-        this.setState({recipeSubmitted: true});
+        let recipeCount = this.state.recipesAdded;
+        let recipes = this.state.recipes.slice();
+
+        e.persist();
+
+        console.log(e)
+
+        recipes.push({
+            name: "",
+            ingridients: []
+        });
+        this.setState({recipes: recipes});
+
+        this.setState({recipesAdded: recipeCount+1}, (event) => {
+            if (e.target.id == "recipe_name") {
+                let name = this.state.recipes[recipeCount].name;
+                this.setState({name: e.target.value});
+            } else {
+                let ingridients = this.state.recipes[recipeCount].ingridients;
+                this.setState({ingridients: e.target.value.split(",")});
+            }
+        })
+
+        // if (e.target.id == "recipe_name") {
+        //     let name = this.state.recipes[recipeCount].name;
+        //     this.setState({name: e.target.value});
+        // } else {
+        //     let ingridients = this.state.recipes[recipeCount].ingridients;
+        //     this.setState({ingridients: e.target.value.split(",")});
+        // }
+
     }
 
     createRecipe() {
-        const name = this.state.recipe.name,
-              ingridients = this.state.recipe.ingridients;
-              console.log(this.state.recipe.name)
-              console.warn(this.state.recipe.ingridients)
+        // const name = this.state.recipe.name,
+        //       ingridients = this.state.recipe.ingridients;
+        //       console.log(this.state.recipe.name)
+        //       console.warn(this.state.recipe.ingridients)
 
         return (
-            <Accordion recipeName={name}
-                       recipeIngredients={ingridients}
-                       key={name}/>
+            <Accordion recipeName={null}
+                       recipeIngredients={null}
+                       key={null}/>
         )
     }
 
