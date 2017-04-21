@@ -24,13 +24,13 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           onChange={/*this.handleChange*/}
+                           onChange={()=> null/*this.handleChange*/}
                            required/>
                 </label>
                 <label htmlFor="ingridients"> Ingridients
                     <textarea id="ingridients"
                               rows="4"
-                              onChange={/*this.handleChange*/}
+                              onChange={()=> null/*this.handleChange*/}
                               placeholder="Comma,separated"
                               required></textarea>
                 </label>
