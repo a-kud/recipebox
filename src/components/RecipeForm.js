@@ -7,9 +7,6 @@ class RecipeForm extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    handleChange(e) {
-        this.props.onRecipeChange(e);
-    }
 
     handleFormSubmit(e) {
         e.preventDefault();
@@ -24,13 +21,11 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           onChange={()=> null/*this.handleChange*/}
                            required/>
                 </label>
                 <label htmlFor="ingridients"> Ingridients
                     <textarea id="ingridients"
                               rows="4"
-                              onChange={()=> null/*this.handleChange*/}
                               placeholder="Comma,separated"
                               required></textarea>
                 </label>
