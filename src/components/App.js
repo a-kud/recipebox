@@ -19,18 +19,6 @@ class RecipeBox extends React.Component {
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
     }
 
-    handleRecipeChange(e) {
-        // const name = this.state.recipe.name,
-        //       ingridients = this.state.recipe.ingridients;
-
-    /*    if (e.target.id == "recipe_name") {
-            this.setState({recipes.name: e.target.value});
-        } else {
-            this.setState({recipes.ingridients: e.target.value.split(",")});
-        }
-*/
-    }
-
     handleRecipeSubmit(e) {
         let recipeCount = this.state.recipesAdded;
         let recipes = this.state.recipes.slice();
