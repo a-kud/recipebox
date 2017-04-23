@@ -12,7 +12,6 @@ class Modal extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.handleRecipeChange = this.handleRecipeChange.bind(this);
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
     }
 

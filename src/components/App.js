@@ -15,7 +15,6 @@ class RecipeBox extends React.Component {
             recipeSubmitted: false,
         };
 
-        this.handleRecipeChange = this.handleRecipeChange.bind(this);
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
     }
 
