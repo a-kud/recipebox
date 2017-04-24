@@ -77,7 +77,7 @@ class RecipeBox extends React.Component {
                         {this.createRecipe()}
                     </div>
                     <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
-                                        onRecipeChange={this.handleRecipeChange}/>
+                                        />
 
                 </div>
             );
