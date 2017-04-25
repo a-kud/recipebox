@@ -36,7 +36,6 @@ class Modal extends React.Component {
         <ModalContainer onClose={() => this.handleClose() }>
           <ModalDialog onClose={ () => this.handleClose() }>
             <RecipeForm recipe={this.props.recipe}
-                        onRecipeChange={this.handleRecipeChange}
                         handleFormSubmit={this.handleRecipeSubmit}/>
           </ModalDialog>
         </ModalContainer>
