@@ -10,6 +10,7 @@ class RecipeForm extends React.Component {
     handleFormSubmit(e) {
         e.preventDefault();
         this.props.handleFormSubmit(e);
+        console.log(e);
     }
 
     render() {

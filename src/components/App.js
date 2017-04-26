@@ -33,13 +33,19 @@ class RecipeBox extends React.Component {
         this.setState({recipes: recipes});
 
         this.setState({recipesAdded: recipeCount+1}, (event) => {
-            if (e.target.id == "recipe_name") {
-                let name = this.state.recipes[recipeCount].name;
+
+            let name = this.state.recipes[recipeCount].name;
+            let ingridients = this.state.recipes[recipeCount].ingridients;
+
+            this.setState({name: e.target[0].value});
+            this.setState({ingridients: e.target[1].value.split(",")});
+            /*if (e.target.id == "recipe_name") {
+
                 this.setState({name: e.target.value});
             } else {
-                let ingridients = this.state.recipes[recipeCount].ingridients;
+
                 this.setState({ingridients: e.target.value.split(",")});
-            }
+            }*/
         })
 
         // if (e.target.id == "recipe_name") {
@@ -88,7 +94,7 @@ class RecipeBox extends React.Component {
                     <div className="background">
                     </div>
                     <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
-                                        onRecipeChange={this.handleRecipeChange}/>
+                                        />
 
                 </div>
             );
