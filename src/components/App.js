@@ -24,13 +24,10 @@ class RecipeBox extends React.Component {
 
         e.persist();
 
-        console.log(e)
-
         recipes.push({
             name: "",
             ingridients: []
         });
-        this.setState({recipes: recipes});
 
         this.setState({recipesAdded: recipeCount+1}, (event) => {
 
@@ -39,6 +36,8 @@ class RecipeBox extends React.Component {
 
             this.setState({name: e.target[0].value});
             this.setState({ingridients: e.target[1].value.split(",")});
+
+            this.setState({recipes: recipes});
             /*if (e.target.id == "recipe_name") {
 
                 this.setState({name: e.target.value});
@@ -76,7 +75,7 @@ class RecipeBox extends React.Component {
               ingridients = this.state.recipe.ingridients,*/
               recipe = this.state.recipe;
 
-        if (this.state.recipeSubmitted) {
+        /*if (this.state.recipeSubmitted) {
             return (
                 <div>
                     <div className="background">
@@ -88,7 +87,7 @@ class RecipeBox extends React.Component {
                 </div>
             );
         }
-        else {
+        else {*/
             return (
                 <div>
                     <div className="background">
@@ -98,7 +97,7 @@ class RecipeBox extends React.Component {
 
                 </div>
             );
-        }
+        /*}*/
 
     };
 }
