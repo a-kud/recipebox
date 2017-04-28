@@ -44,10 +44,6 @@ class RecipeBox extends React.Component {
     }
 
     createRecipe() {
-        // const name = this.state.recipe.name,
-        //       ingridients = this.state.recipe.ingridients;
-        //       console.log(this.state.recipe.name)
-        //       console.warn(this.state.recipe.ingridients)
 
         return (
             <Accordion recipeName={null}
