@@ -33,8 +33,10 @@ class RecipeBox extends React.Component {
 
             // let name = this.state.recipes[recipeCount].name;
             // let ingridients = this.state.recipes[recipeCount].ingridients;
-            let name = recipes[recipeCount][0];
-            let ingridients = recipes[recipeCount][1];
+            let name = recipes[recipeCount];
+            let ingridients = recipes[recipeCount];
+
+            console.warn(name, ingridients)
 
             this.setState({name: e.target[0].value});
             this.setState({ingridients: e.target[1].value.split(",")});
