@@ -25,24 +25,12 @@ class RecipeBox extends React.Component {
         e.persist();
 
         recipes.push({
-            name: "",
-            ingridients: []
+            name: e.target[0].value,
+            ingridients: e.target[1].value.split(","),
         });
 
-        this.setState({recipesAdded: recipeCount+1}, (event) => {
-
-            // let name = this.state.recipes[recipeCount].name;
-            // let ingridients = this.state.recipes[recipeCount].ingridients;
-            let name = recipes[recipeCount];
-            let ingridients = recipes[recipeCount];
-
-            console.warn(name, ingridients)
-
-            this.setState({name: e.target[0].value});
-            this.setState({ingridients: e.target[1].value.split(",")});
-
+        this.setState({recipesAdded: recipeCount+1}, () => {
             this.setState({recipes: recipes});
-
         })
 
     }

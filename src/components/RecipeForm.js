@@ -13,6 +13,10 @@ class RecipeForm extends React.Component {
         console.log(e);
     }
 
+    handleSubmitClick() {
+        
+    }
+
     render() {
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
@@ -29,7 +33,7 @@ class RecipeForm extends React.Component {
                               placeholder="Comma,separated"
                               required></textarea>
                 </label>
-                <input type="submit" value="Add Recipe" />
+                <input type="submit" value="Add Recipe" onClick={this.handleSubmitClick}/>
             </form>
         );
     }
