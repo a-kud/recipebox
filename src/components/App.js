@@ -22,8 +22,6 @@ class RecipeBox extends React.Component {
         let recipeCount = this.state.recipesAdded;
         let recipes = this.state.recipes.slice();
 
-        //e.persist();
-
         recipes.push({
             name: e.target[0].value,
             ingridients: e.target[1].value.split(","),
