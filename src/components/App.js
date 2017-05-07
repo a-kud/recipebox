@@ -6,10 +6,6 @@ class RecipeBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            /*recipe: {
-                name: "",
-                ingridients: [],
-            },*/
             recipesAdded: 0,
             recipes: [],
             recipeSubmitted: false,
@@ -43,34 +39,17 @@ class RecipeBox extends React.Component {
     }
 
     render() {
-        const /*name = this.state.recipe.name,
-              ingridients = this.state.recipe.ingridients,*/
-              recipe = this.state.recipe;
+        const recipe = this.state.recipe;
 
-        /*if (this.state.recipeSubmitted) {
-            return (
-                <div>
-                    <div className="background">
-                        {this.createRecipe()}
-                    </div>
-                    <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
-                                        />
-
+        return (
+            <div>
+                <div className="background">
                 </div>
-            );
-        }
-        else {*/
-            return (
-                <div>
-                    <div className="background">
-                    </div>
-                    <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
-                                        />
+                <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit}
+                                    />
 
-                </div>
-            );
-        /*}*/
-
+            </div>
+        );
     };
 }
 
