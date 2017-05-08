@@ -4,17 +4,21 @@ class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleSubmitClick = this.handleSubmitClick.bind(this);
     }
-
 
     handleFormSubmit(e) {
         e.preventDefault();
         this.props.handleFormSubmit(e);
-        console.log(e);
     }
 
     handleSubmitClick() {
-        
+        // return (
+        //     <Accordion recipeName={null}
+        //                recipeIngredients={null}
+        //                key={null}/>
+        // )
+        cosole.warn("click")
     }
 
     render() {
