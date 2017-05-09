@@ -46,7 +46,6 @@ class RecipeBox extends React.Component {
                 <div className="background">
                 </div>
                 <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit} />
-
             </div>
         );
     };

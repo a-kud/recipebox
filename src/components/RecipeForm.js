@@ -1,4 +1,5 @@
 import React from "react";
+import Accordion from "./Accordion";
 
 class RecipeForm extends React.Component {
     constructor(props) {
@@ -13,12 +14,9 @@ class RecipeForm extends React.Component {
     }
 
     handleSubmitClick() {
-        // return (
-        //     <Accordion recipeName={null}
-        //                recipeIngredients={null}
-        //                key={null}/>
-        // )
-        cosole.warn("click")
+        return (
+            <Accordion />
+        )
     }
 
     render() {
