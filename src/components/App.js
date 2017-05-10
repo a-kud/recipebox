@@ -32,10 +32,16 @@ class RecipeBox extends React.Component {
     createRecipe() {
 
         return (
-            <Accordion recipeName={null}
-                       recipeIngredients={null}
-                       key={null}/>
+            <Accordion />
         )
+        // recipeName={null}
+        //            recipeIngredients={null}
+        //            key={null}
+    }
+
+
+    componentDidUpdate() {
+        this.createRecipe();
     }
 
     render() {
