@@ -39,25 +39,14 @@ class RecipeBox extends React.Component {
         //            key={null}
     }
 
-
-    componentDidUpdate() {
-        const recipe = this.state.recipes;
-
-        return (
-            <div>
-                <div className="background">
-                    {this.createRecipe()}
-                </div>
-                <Modal recipe={recipe} onRecipeSubmit={this.handleRecipeSubmit} />
-            </div>
-        );
-    }
-
     render() {
 
+        let recipe = !this.state.recipesAdded ? null : this.createRecipe();
+
         return (
             <div>
                 <div className="background">
+                    {recipe}
                 </div>
                 <Modal onRecipeSubmit={this.handleRecipeSubmit} />
             </div>
