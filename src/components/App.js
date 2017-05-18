@@ -6,7 +6,7 @@ class RecipeBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recipesAdded: 0,
+            // recipesAdded: 0,
             recipes: [],
             recipeSubmitted: false,
         };
@@ -15,7 +15,7 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeSubmit(e) {
-        let recipeCount = this.state.recipesAdded;
+    //     let recipeAdded = this.state.recipes;
         let recipes = this.state.recipes.slice();
 
         recipes.push({
@@ -23,9 +23,10 @@ class RecipeBox extends React.Component {
             ingridients: e.target[1].value.split(","),
         });
 
-        this.setState({recipesAdded: recipeCount+1}, () => {
-            this.setState({recipes: recipes});
-        })
+        // this.setState({recipesAdded: recipeCount+1}, () => {
+        //     this.setState({recipes: recipes});
+        // })
+        this.setState({recipes: recipes});
 
     }
 
