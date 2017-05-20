@@ -7,7 +7,6 @@ class RecipeBox extends React.Component {
         super(props);
         this.state = {
             recipes: [],
-            recipeSubmitted: false,
         };
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
