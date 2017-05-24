@@ -18,6 +18,8 @@ class Accordion extends React.Component {
                 <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
                 <div className="panel">
                     <p className="recipe_ingredients">{this.props.recipeIngredients}</p>
+                    <button>Delete</button>
+                    <button>Edit</button>
                 </div>
             </div>
         );

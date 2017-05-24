@@ -27,7 +27,7 @@ class RecipeBox extends React.Component {
     createRecipe() {
 
         let recipes = this.state.recipes.slice();
-        console.log(recipes)
+
         return (
             <Accordion recipeName={recipes[recipes.length]}/>
         );
