@@ -13,12 +13,23 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeSubmit(e) {
+        function guid() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                    s4() + '-' + s4() + s4() + s4();
+        }
+
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+
         let recipes = this.state.recipes.slice();
 
         recipes.push({
             name: e.target[0].value,
             ingridients: e.target[1].value.split(","),
-            id: Date.now(),
+            id: guid(),
         });
 
         this.setState({recipes: recipes});
