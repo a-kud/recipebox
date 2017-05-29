@@ -38,10 +38,15 @@ class RecipeBox extends React.Component {
 
     createRecipe() {
 
-        let recipes = this.state.recipes.slice();
+        let recipes = this.state.recipes.slice(),
+            recipesList = recipes.map((recipe) =>
+                <Accordion recipeName={recipe}/>
+            );
 
         return (
-            <Accordion recipeName={recipes[recipes.length]}/>
+            <div>
+                {recipesList}
+            </div>
         );
     }
 
@@ -49,10 +54,15 @@ class RecipeBox extends React.Component {
 
         let recipe = !this.state.recipesAdded ? null : this.createRecipe();
 
+        let recipes = this.state.recipes.slice(),
+            recipesList = recipes.map((recipe) =>
+                <Accordion recipeName={recipe.name}/>
+            );
+
         return (
             <div>
                 <div className="background">
-                    {this.createRecipe()}
+                    {recipesList}
                 </div>
                 <Modal onRecipeSubmit={this.handleRecipeSubmit} />
             </div>
