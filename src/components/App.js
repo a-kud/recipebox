@@ -36,20 +36,6 @@ class RecipeBox extends React.Component {
 
     }
 
-    createRecipe() {
-
-        let recipes = this.state.recipes.slice(),
-            recipesList = recipes.map((recipe) =>
-                <Accordion recipeName={recipe}/>
-            );
-
-        return (
-            <div>
-                {recipesList}
-            </div>
-        );
-    }
-
     render() {
 
         let recipe = !this.state.recipesAdded ? null : this.createRecipe();
