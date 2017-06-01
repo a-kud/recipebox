@@ -13,6 +13,9 @@ class Accordion extends React.Component {
     }
 
     render() {
+        let ingridients = this.props.ingridients.map( ingridient =>
+            <p>{ingridient}</p>
+        );
         return (
             <div className="recipe_accordion">
                 <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
