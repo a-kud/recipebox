@@ -1,4 +1,5 @@
 import React from "react";
+import {s4, guid} from "../helpers/guid";
 
 class Accordion extends React.Component {
 
