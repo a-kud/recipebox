@@ -2,6 +2,8 @@ import React from "react";
 import Accordion from "./Accordion";
 import Modal from "./Modal";
 
+import {s4, guid} from "../helpers/guid"
+
 class RecipeBox extends React.Component {
     constructor(props) {
         super(props);
@@ -13,7 +15,7 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeSubmit(e) {
-        function guid() {
+        /*function guid() {
             return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
                     s4() + '-' + s4() + s4() + s4();
         }
@@ -22,7 +24,7 @@ class RecipeBox extends React.Component {
           return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16)
             .substring(1);
-        }
+        }*/
 
         let recipes = this.state.recipes.slice();
 
