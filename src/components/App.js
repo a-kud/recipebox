@@ -28,12 +28,12 @@ class RecipeBox extends React.Component {
     }
 
     render() {
-
-        let recipe = !this.state.recipesAdded ? null : this.createRecipe();
+/*
+        let recipe = !this.state.recipesAdded ? null : this.createRecipe();*/
 
         let recipes = this.state.recipes.slice(),
             recipesList = recipes.map((recipe) =>
-                <Accordion key={recipe.id} recipeName={recipe.name} ingridients={recipe.ingridients}/>
+                <Accordion key={guid()} recipeName={recipe.name} ingridients={recipe.ingridients}/>
             );
 
         return (
