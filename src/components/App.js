@@ -20,7 +20,6 @@ class RecipeBox extends React.Component {
         recipes.push({
             name: e.target[0].value,
             ingridients: e.target[1].value.split(","),
-            id: guid(),
         });
 
         this.setState({recipes: recipes});
