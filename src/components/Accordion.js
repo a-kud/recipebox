@@ -15,7 +15,7 @@ class Accordion extends React.Component {
 
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
-            <p>{ingridient}</p>
+            <p key={guid()}> {ingridient} </p>
         );
         return (
             <div className="recipe_accordion">
