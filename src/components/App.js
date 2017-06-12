@@ -12,6 +12,7 @@ class RecipeBox extends React.Component {
         };
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
+        this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
     }
 
     handleRecipeSubmit(e) {
@@ -34,7 +35,7 @@ class RecipeBox extends React.Component {
 
         let recipes = this.state.recipes.slice(),
             recipesList = recipes.map((recipe) =>
-                <Accordion key={guid()} delete={} recipeName={recipe.name} ingridients={recipe.ingridients}/>
+                <Accordion key={guid()} delete={this.handleRecipeSubmit} recipeName={recipe.name} ingridients={recipe.ingridients}/>
             );
 
         return (
