@@ -2,7 +2,7 @@ import React from "react";
 
 class DeleteRecipe extends React.Component {
 
-    handleClick() {
+    handleClick(e) {
         this.props.delete();
     }
 

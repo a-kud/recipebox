@@ -21,6 +21,7 @@ class RecipeBox extends React.Component {
         recipes.push({
             name: e.target[0].value,
             ingridients: e.target[1].value.split(","),
+            id: guid(),
         });
 
         this.setState({recipes: recipes});
@@ -28,14 +29,14 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeDelete() {
-        console.log(`recipe delete`)
+        return 0;
     }
 
     render() {
 
         let recipes = this.state.recipes.slice(),
             recipesList = recipes.map((recipe) =>
-                <Accordion key={guid()} delete={this.handleRecipeDelete} recipeName={recipe.name} ingridients={recipe.ingridients}/>
+                <Accordion key={guid()} id={`recipe-${guid()}`} delete={this.handleRecipeDelete} recipeName={recipe.name} ingridients={recipe.ingridients}/>
             );
 
         return (
