@@ -36,7 +36,12 @@ class RecipeBox extends React.Component {
 
         let recipes = this.state.recipes.slice(),
             recipesList = recipes.map((recipe) =>
-                <Accordion key={guid()} id={`recipe-${guid()}`} delete={this.handleRecipeDelete} recipeName={recipe.name} ingridients={recipe.ingridients}/>
+                <Accordion
+                    key={guid()}
+                    id={`recipe-${guid()}`}
+                    delete={this.handleRecipeDelete}
+                    recipeName={recipe.name}
+                    ingridients={recipe.ingridients} />
             );
 
         return (
