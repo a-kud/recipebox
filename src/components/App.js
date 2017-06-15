@@ -38,7 +38,7 @@ class RecipeBox extends React.Component {
             recipesList = recipes.map((recipe) =>
                 <Accordion
                     key={guid()}
-                    id={`recipe-${recipe.id}`}
+                    id={recipe.id}
                     delete={this.handleRecipeDelete}
                     recipeName={recipe.name}
                     ingridients={recipe.ingridients} />

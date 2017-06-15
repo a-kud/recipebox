@@ -24,7 +24,7 @@ class Accordion extends React.Component {
                 <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
                 <div className="panel">
                     <section className="recipe_ingredients">{ingridients}</section>
-                    <DeleteRecipe delete={ () => this.props.delete() }/>
+                    <DeleteRecipe id={this.props.id} delete={ () => this.props.delete() }/>
                     <button>Edit</button>
                 </div>
             </div>
