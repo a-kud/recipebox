@@ -28,8 +28,8 @@ class RecipeBox extends React.Component {
 
     }
 
-    handleRecipeDelete() {
-        return 0;
+    handleRecipeDelete(id) {
+        console.log(id)
     }
 
     render() {
