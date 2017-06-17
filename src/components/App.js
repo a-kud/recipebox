@@ -29,7 +29,13 @@ class RecipeBox extends React.Component {
     }
 
     handleRecipeDelete(id) {
-        console.log(id)
+
+        let recipes = this.state.recipes.slice();
+
+        let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
+
+        this.setState({recipes: recipes.splice(index, 1)});
+
     }
 
     render() {
