@@ -34,7 +34,8 @@ class RecipeBox extends React.Component {
 
         let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
 
-        this.setState({recipes: recipes.splice(index, 1)});
+        recipes.splice(index, 1);
+        this.setState({recipes: recipes});
 
     }
 
