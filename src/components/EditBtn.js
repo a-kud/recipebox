@@ -4,7 +4,7 @@ class EditRecipe extends React.Component {
 
     render() {
         return (
-            <button onClick-{() => alert("Click")}>Edit</button>
+            <button onClick={() => alert("Click")}>Edit</button>
         );
     }
 }
