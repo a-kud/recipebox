@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteRecipe from "./DeleteRecipe";
+import EditRecipe frtom "./EditBtn";
 
 import {s4, guid} from "../helpers/guid";
 
@@ -25,7 +26,7 @@ class Accordion extends React.Component {
                 <div className="panel">
                     <section className="recipe_ingredients">{ingridients}</section>
                     <DeleteRecipe id={this.props.id} delete={ (id) => this.props.delete(id) }/>
-                    <button onClick-{() => alert("Click")}>Edit</button>
+                    <EditRecipe />
                 </div>
             </div>
         );
