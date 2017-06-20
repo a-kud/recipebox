@@ -1,6 +1,6 @@
 import React from "react";
 import Accordion from "./Accordion";
-import Modal from "./Modal";
+import AddRecipe from "./AddRecipe";
 
 import {s4, guid} from "../helpers/guid";
 
@@ -56,7 +56,7 @@ class RecipeBox extends React.Component {
                 <div className="background">
                     {recipesList}
                 </div>
-                <Modal onRecipeSubmit={this.handleRecipeSubmit} />
+                <AddRecipe onRecipeSubmit={this.handleRecipeSubmit} />
             </div>
         );
     };

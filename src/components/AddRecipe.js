@@ -3,7 +3,7 @@ import RecipeForm from "./RecipeForm";
 import {ModalContainer, ModalDialog} from "react-modal-dialog";
 
 //opens up modal window with add button
-class Modal extends React.Component {
+class AddRecipe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,4 +44,4 @@ class Modal extends React.Component {
   }
 }
 
-export default Modal;
+export default AddRecipe;
