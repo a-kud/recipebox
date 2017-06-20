@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteRecipe from "./DeleteRecipe";
-import EditRecipe from "./EditBtn";
+import EditRecipe from "./EditRecipe";
 
 import {s4, guid} from "../helpers/guid";
 
