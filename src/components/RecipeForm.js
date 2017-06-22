@@ -6,6 +6,7 @@ class RecipeForm extends React.Component {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleSubmitClick = this.handleSubmitClick.bind(this);
+        this.handleChange = this.handleChange.band(this):
     }
 
     handleFormSubmit(e) {
@@ -19,6 +20,10 @@ class RecipeForm extends React.Component {
         )
     }
 
+    handleChange(e) {
+        this.props.handleChange(e);
+    }
+
     render() {
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
@@ -27,7 +32,10 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           required/>
+                           value={"foo"}
+                           required
+                           onChange={this.handleChange}
+                           />
                 </label>
                 <label htmlFor="ingridients"> Ingridients
                     <textarea id="ingridients"
