@@ -6,7 +6,7 @@ class RecipeForm extends React.Component {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleSubmitClick = this.handleSubmitClick.bind(this);
-        this.handleChange = this.handleChange.band(this):
+        this.handleChange = this.handleChange.bind(this):
     }
 
     handleFormSubmit(e) {
