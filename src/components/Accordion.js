@@ -26,7 +26,7 @@ class Accordion extends React.Component {
                 <div className="panel">
                     <section className="recipe_ingredients">{ingridients}</section>
                     <DeleteRecipe id={this.props.id} delete={ (id) => this.props.delete(id) }/>
-                    <EditRecipe />
+                    <EditRecipe id={this.props.id} />
                 </div>
             </div>
         );
