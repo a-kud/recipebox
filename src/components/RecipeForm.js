@@ -28,7 +28,6 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-
                            required
                            />
                 </label>
