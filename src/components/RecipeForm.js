@@ -21,11 +21,7 @@ class RecipeForm extends React.Component {
 
 
     render() {
-
-        if (this.props.foo) {
-            console.log("foo is in props")
-        }
-
+        
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
                 <h1> Add Your Recipe </h1>

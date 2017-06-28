@@ -9,6 +9,8 @@ class RecipeBox extends React.Component {
         super(props);
         this.state = {
             recipes: [],
+            currentName: "",
+            currentIngridients: ""
         };
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
@@ -57,7 +59,7 @@ class RecipeBox extends React.Component {
                 <div className="background">
                     {recipesList}
                 </div>
-                <AddRecipe recipe={recipes[recipes.length-1]}
+                <AddRecipe 
                            onRecipeSubmit={this.handleRecipeSubmit}
                            />
             </div>
