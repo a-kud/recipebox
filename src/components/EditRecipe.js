@@ -30,7 +30,6 @@ class EditRecipe extends React.Component {
               <ModalContainer onClose={() => this.handleClose() }>
                 <ModalDialog onClose={ () => this.handleClose() }>
                   <RecipeForm recipe={this.props.recipe}
-                              foo={"foo"}
                               handleFormSubmit={this.handleRecipeSubmit}/>
                 </ModalDialog>
               </ModalContainer>
