@@ -36,7 +36,8 @@ class AddRecipe extends React.Component {
         <ModalContainer onClose={() => this.handleClose() }>
           <ModalDialog onClose={ () => this.handleClose() }>
             <RecipeForm handleFormSubmit={this.handleRecipeSubmit}
-                        />
+                        name={this.props.name}
+                        ingridients={this.props.ingridients}/>
           </ModalDialog>
         </ModalContainer>
       }

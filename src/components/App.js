@@ -15,6 +15,7 @@ class RecipeBox extends React.Component {
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
         this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
+        this.handleRecipeChange = this.handleRecipeChange.bind(this);
     }
 
     handleRecipeSubmit(e) {
@@ -33,12 +34,17 @@ class RecipeBox extends React.Component {
     handleRecipeDelete(id) {
 
         let recipes = this.state.recipes.slice();
-
         let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
 
         recipes.splice(index, 1);
         this.setState({recipes: recipes});
 
+    }
+
+    handleRecipeChange() {
+
+        const { currentRecipe } = this.state;
+        console.log(currentRecipe)
     }
 
 
@@ -59,7 +65,8 @@ class RecipeBox extends React.Component {
                 <div className="background">
                     {recipesList}
                 </div>
-                <AddRecipe 
+                <AddRecipe name={this.state.currentName}
+                           ingridients={this.state.currentIngridients}
                            onRecipeSubmit={this.handleRecipeSubmit}
                            />
             </div>

@@ -21,7 +21,7 @@ class RecipeForm extends React.Component {
 
 
     render() {
-        
+
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
                 <h1> Add Your Recipe </h1>
@@ -29,6 +29,7 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
+                           value={this.props.name}
                            required
                            />
                 </label>
@@ -36,6 +37,7 @@ class RecipeForm extends React.Component {
                     <textarea id="ingridients"
                               rows="4"
                               placeholder="Comma,separated"
+                              value={this.props.ingridients}
                               required></textarea>
                 </label>
                 <input type="submit" value="Add Recipe" onClick={this.handleSubmitClick}/>
