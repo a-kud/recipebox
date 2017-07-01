@@ -42,7 +42,7 @@ class RecipeBox extends React.Component {
     }
 
     //propName - recipe name or ingridients
-    handleRecipeChange(propName) {
+    handleRecipeChange(propName,e) {
 
         return (e) => {
             const { currentRecipe } = this.state;
@@ -76,7 +76,7 @@ class RecipeBox extends React.Component {
                 <AddRecipe name={this.state.currentName}
                            ingridients={this.state.currentIngridients}
                            onRecipeSubmit={this.handleRecipeSubmit}
-                           onChange={this.handleRecipeChange}
+                           onRecipeChange={this.handleRecipeChange(propName, e)}
                            />
             </div>
         );

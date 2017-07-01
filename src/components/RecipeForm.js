@@ -6,6 +6,7 @@ class RecipeForm extends React.Component {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleSubmitClick = this.handleSubmitClick.bind(this);
+        this.handleChangeFor = this.handleChangeFor.bind(this);
     }
 
     handleFormSubmit(e) {
@@ -19,6 +20,9 @@ class RecipeForm extends React.Component {
         )
     }
 
+    handleChangeFor(propName, e) {
+        this.props.onRecipeChange(propName, e);
+    }
 
     render() {
 
@@ -29,6 +33,7 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
+                           onChange={this.handleChangeFor("name")}
                            value={this.props.name}
                            required
                            />
