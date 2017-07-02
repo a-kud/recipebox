@@ -43,7 +43,7 @@ class AddRecipe extends React.Component {
             <RecipeForm handleFormSubmit={this.handleRecipeSubmit}
                         name={this.props.name}
                         ingridients={this.props.ingridients}
-                        handleRecipeChange={this.props.onRecipeChange(propName, e)}
+                        handleRecipeChange={this.props.onRecipeChange}
                         />
           </ModalDialog>
         </ModalContainer>

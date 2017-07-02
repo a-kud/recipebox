@@ -42,17 +42,23 @@ class RecipeBox extends React.Component {
     }
 
     //propName - recipe name or ingridients
-    handleRecipeChange(propName,e) {
-
-        return (e) => {
-            const { currentRecipe } = this.state;
-            const updatedRecipe = {
-                ...currentRecipe,
-                [propName]: e.target.value
-            };
-            this.setState({currentRecipe: updatedRecipe});
-        }
-
+    // handleRecipeChange(propName,e) {
+    //
+    //     const { currentRecipe } = this.state;
+    //     const updatedRecipe = {
+    //         ...currentRecipe,
+    //         [propName]: e.target.value
+    //     };
+    //     this.setState({currentRecipe: updatedRecipe});
+    //
+    // }
+    handleRecipeChange = (propName) => (e) => {
+        const { currentRecipe } = this.state;
+        const updatedRecipe = {
+            ...currentRecipe,
+            [propName]: e.target.value
+        };
+        this.setState({currentRecipe: updatedRecipe});
     }
 
 
@@ -76,7 +82,7 @@ class RecipeBox extends React.Component {
                 <AddRecipe name={this.state.currentName}
                            ingridients={this.state.currentIngridients}
                            onRecipeSubmit={this.handleRecipeSubmit}
-                           onRecipeChange={this.handleRecipeChange(propName, e)}
+                           onRecipeChange={this.handleRecipeChange}
                            />
             </div>
         );

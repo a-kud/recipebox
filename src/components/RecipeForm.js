@@ -21,7 +21,7 @@ class RecipeForm extends React.Component {
     }
 
     handleChangeFor(propName, e) {
-        this.props.onRecipeChange(propName, e);
+        this.props.handleRecipeChange(propName, e);
     }
 
     render() {
@@ -33,7 +33,7 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           onChange={this.handleChangeFor("name")}
+                           onChange={ e => this.handleChangeFor("currentName", e) }
                            value={this.props.name}
                            required
                            />
@@ -42,6 +42,7 @@ class RecipeForm extends React.Component {
                     <textarea id="ingridients"
                               rows="4"
                               placeholder="Comma,separated"
+                              onChange={ e => this.handleChangeFor("currentIngridients", e) }
                               value={this.props.ingridients}
                               required></textarea>
                 </label>
