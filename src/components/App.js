@@ -42,25 +42,18 @@ class RecipeBox extends React.Component {
     }
 
     //propName - recipe name or ingridients
-    // handleRecipeChange(propName,e) {
-    //
-    //     const { currentRecipe } = this.state;
-    //     const updatedRecipe = {
-    //         ...currentRecipe,
-    //         [propName]: e.target.value
-    //     };
-    //     this.setState({currentRecipe: updatedRecipe});
-    //
-    // }
-    handleRecipeChange = (propName) => (e) => {
-        const { currentRecipe } = this.state;
-        const updatedRecipe = {
-            ...currentRecipe,
-            [propName]: e.target.value
-        };
-        this.setState({currentRecipe: updatedRecipe});
-    }
+    handleRecipeChange(propName,e) {
 
+        // const {currentRecipe } = this.state;
+        // const updatedRecipe = {
+        //     ...currentRecipe,
+        //     [propName]: e.target.value
+        // };
+        // this.setState({currentRecipe: updatedRecipe});
+        const recipe = e.target.value;
+        const name = propName;
+        this.setState({name, recipe})
+    }
 
     render() {
 
