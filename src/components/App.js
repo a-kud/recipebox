@@ -31,36 +31,28 @@ class RecipeBox extends React.Component {
 
     }
 
-    // handleRecipeDelete(id) {
-    //
-    //     let recipes = this.state.recipes.slice();
-    //     let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
-    //
-    //     recipes.splice(index, 1);
-    //     this.setState({recipes: recipes});
-    //
-    // }
+    handleRecipeDelete(id) {
+
+        let recipes = this.state.recipes.slice();
+        let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
+
+        recipes.splice(index, 1);
+        this.setState({recipes: recipes});
+
+    }
 
     //propName - recipe name or ingridients
     handleRecipeChange(propName,e) {
+        
+        const value = e.target.value;
 
-        // const {currentRecipe } = this.state;
-        // const updatedRecipe = {
-        //     ...currentRecipe,
-        //     [propName]: e.target.value
-        // };
-        // this.setState({currentRecipe: updatedRecipe});
-        const recipes = this.state;
-        recipes[propName] = e.target.value;
-
-        this.setState({recipes, recipes})
-
+        this.setState({[propName]: value})
     }
 
     render() {
 
-        let recipes = this.state.recipes.slice(),
-            recipesList = recipes.map((recipe) =>
+        let recipes = this.state.recipes.slice();
+        let recipesList = recipes.map((recipe) =>
                 <Accordion
                     key={guid()}
                     id={recipe.id}
