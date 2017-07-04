@@ -12,6 +12,7 @@ var config = {
         filename: "bundle.js",
         publicPath: "/build/",
     },
+    devtool: "source-map",
     module: {
         rules: [
             {
