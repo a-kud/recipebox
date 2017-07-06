@@ -35,7 +35,7 @@ class AddRecipe extends React.Component {
 
   render() {
     return <div>
-    <button  onClick={() => this.handleClick() }> Add Recipe </button>
+    <button  onClick={() => this.handleClick() }> {this.props.actionTitle} </button>
       {
         this.state.isShowingModal &&
         <ModalContainer onClose={() => this.handleClose() }>

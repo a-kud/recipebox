@@ -43,7 +43,7 @@ class RecipeBox extends React.Component {
 
     //propName - recipe name or ingridients
     handleRecipeChange(propName,e) {
-        
+
         const value = e.target.value;
 
         this.setState({[propName]: value})
@@ -66,7 +66,8 @@ class RecipeBox extends React.Component {
                 <div className="background">
                     {recipesList}
                 </div>
-                <AddRecipe name={this.state.currentName}
+                <AddRecipe actionTitle={"Add Recipe"}
+                           name={this.state.currentName}
                            ingridients={this.state.currentIngridients}
                            onRecipeSubmit={this.handleRecipeSubmit}
                            onRecipeChange={this.handleRecipeChange}
