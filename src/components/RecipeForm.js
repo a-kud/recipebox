@@ -28,7 +28,7 @@ class RecipeForm extends React.Component {
 
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
-                <h1> Add Your Recipe </h1>
+                <h1> {this.props.actionTitle} </h1>
                 <hr/>
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
