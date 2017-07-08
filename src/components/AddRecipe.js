@@ -29,7 +29,8 @@ class AddRecipe extends React.Component {
         this.props.onRecipeSubmit(e);
     }
 
-    handleRecipeChange(propName, e) {
+    handleRecipeChange(propName, e, action) {
+
         this.props.onRecipeChange(propName, e);
     }
 
@@ -41,6 +42,7 @@ class AddRecipe extends React.Component {
         <ModalContainer onClose={() => this.handleClose() }>
           <ModalDialog onClose={ () => this.handleClose() }>
             <RecipeForm actionTitle={this.props.actionTitle}
+                        action={this.props.action}
                         handleFormSubmit={this.handleRecipeSubmit}
                         name={this.props.name}
                         ingridients={this.props.ingridients}
