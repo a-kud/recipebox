@@ -60,6 +60,8 @@ class RecipeBox extends React.Component {
                 <Accordion
                     key={guid()}
                     id={recipe.id}
+                    onRecipeSubmit={this.handleRecipeSubmit}
+                    onRecipeChange={this.handleRecipeChange}
                     delete={this.handleRecipeDelete}
                     recipeName={recipe.name}
                     ingridients={recipe.ingridients} />

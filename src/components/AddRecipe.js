@@ -25,12 +25,12 @@ class AddRecipe extends React.Component {
     }
 
     handleRecipeSubmit(e) {
-        this.handleClose();
+        //this.handleClose();
         this.props.onRecipeSubmit(e);
     }
 
-    handleRecipeChange(propName, e, action) {
-
+    handleRecipeChange(propName, e) {
+        console.log("change")
         this.props.onRecipeChange(propName, e);
     }
 

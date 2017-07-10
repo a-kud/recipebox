@@ -5,6 +5,11 @@ import AddRecipe from "./AddRecipe";
 import {s4, guid} from "../helpers/guid";
 
 class Accordion extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleRecipeChange = this.handleRecipeChange.bind(this);
+    }
 
     handleClick(e) {
         let panel = e.target.nextElementSibling;
@@ -15,6 +20,11 @@ class Accordion extends React.Component {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     }
+
+    handleRecipeChange(propName, e) {
+        this.props.onRecipeChange(propName, e);
+    }
+
 
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
@@ -29,7 +39,8 @@ class Accordion extends React.Component {
                     <AddRecipe  actionTitle={"Edit Recipe"}
                                 id={this.props.id}
                                 name={this.props.recipeName}
-                                ingridients={this.props.ingridients}/>
+                                ingridients={this.props.ingridients}
+                                onRecipeChange={this.handleRecipeChange}/>
                 </div>
             </div>
         );
