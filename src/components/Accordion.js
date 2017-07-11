@@ -5,11 +5,6 @@ import AddRecipe from "./AddRecipe";
 import {s4, guid} from "../helpers/guid";
 
 class Accordion extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.handleRecipeChange = this.handleRecipeChange.bind(this);
-    }
 
     handleClick(e) {
         let panel = e.target.nextElementSibling;
@@ -21,9 +16,6 @@ class Accordion extends React.Component {
         }
     }
 
-    handleRecipeChange(propName, e) {
-        this.props.onRecipeChange(propName, e);
-    }
 
 
     render() {
@@ -40,7 +32,7 @@ class Accordion extends React.Component {
                                 id={this.props.id}
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
-                                onRecipeChange={this.handleRecipeChange}/>
+                                />
                 </div>
             </div>
         );
