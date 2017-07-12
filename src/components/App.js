@@ -16,6 +16,7 @@ class RecipeBox extends React.Component {
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
         this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
         this.handleRecipeChange = this.handleRecipeChange.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     handleRecipeSubmit(e) {
@@ -53,6 +54,10 @@ class RecipeBox extends React.Component {
         this.setState({[propName]: value})
     }
 
+    handleEdit(propName, e) {
+        console.log("fire")
+    }
+
     render() {
 
         let recipes = this.state.recipes.slice();
@@ -64,7 +69,8 @@ class RecipeBox extends React.Component {
                     onRecipeChange={this.handleRecipeChange}
                     delete={this.handleRecipeDelete}
                     recipeName={recipe.name}
-                    ingridients={recipe.ingridients} />
+                    ingridients={recipe.ingridients}
+                    onEdit={this.handleEdit} />
             );
 
         return (
