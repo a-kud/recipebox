@@ -55,7 +55,9 @@ class RecipeBox extends React.Component {
     }
 
     handleEdit(propName, e) {
-        console.log("fire")
+        let value = e.target.value;
+
+        this.setState({[propName]: value})
     }
 
     render() {
