@@ -14,12 +14,6 @@ class RecipeForm extends React.Component {
         this.props.handleFormSubmit(e);
     }
 
-    handleSubmitClick() {
-        return (
-            <Accordion />
-        )
-    }
-
     handleChangeFor(propName, e) {
         this.props.handleRecipeChange(propName, e);
     }
@@ -46,7 +40,7 @@ class RecipeForm extends React.Component {
                               value={this.props.ingridients}
                               required></textarea>
                 </label>
-                <input type="submit" value="Add Recipe" onClick={this.handleSubmitClick}/>
+                <input type="submit" value="Add Recipe" />
             </form>
         );
     }

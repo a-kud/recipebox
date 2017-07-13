@@ -26,7 +26,6 @@ class AddRecipe extends React.Component {
 
     handleRecipeSubmit(e) {
         this.handleClose();
-        console.log("fire")
         this.props.onRecipeSubmit(e);
     }
 

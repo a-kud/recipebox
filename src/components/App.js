@@ -50,13 +50,13 @@ class RecipeBox extends React.Component {
     handleRecipeChange(propName,e) {
 
         let value = e.target.value;
-        e.preventDefault();
+
         this.setState({[propName]: value})
     }
 
     handleEdit(propName, e) {
         let value = e.target.value;
-
+        e.preventDefault();
         this.setState({[propName]: value})
     }
 
