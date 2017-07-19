@@ -33,6 +33,8 @@ class AddRecipe extends React.Component {
         this.props.onRecipeChange(propName, e);
     }
 
+
+
   render() {
     return <div>
     <button  onClick={() => this.handleClick() }> {this.props.actionTitle} </button>

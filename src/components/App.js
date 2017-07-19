@@ -10,13 +10,14 @@ class RecipeBox extends React.Component {
         this.state = {
             recipes: [],
             currentName: "",
-            currentIngridients: ""
+            currentIngridients: "",
         };
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
         this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
         this.handleRecipeChange = this.handleRecipeChange.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+
     }
 
     handleRecipeSubmit(e) {
@@ -54,10 +55,24 @@ class RecipeBox extends React.Component {
         this.setState({[propName]: value})
     }
 
-    handleEdit(propName, e) {
+    handleEdit(propName, e, id) {
         let value = e.target.value;
-        e.preventDefault();
-        this.setState({[propName]: value})
+        let recipes = this.state.recipes.slice();
+        let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
+        // let name = recipes[index].name
+
+        if (propName == "currentName") {
+            recipes[index].name = value;
+        } else {
+            recipes[index].ingridients = value.split(",");
+        }
+
+
+        this.setState({
+            [propName]: value,
+            recipes: recipes
+        })
+
     }
 
     render() {
@@ -67,12 +82,13 @@ class RecipeBox extends React.Component {
                 <Accordion
                     key={guid()}
                     id={recipe.id}
-                    onRecipeSubmit={this.handleRecipeSubmit}
-                    onRecipeChange={this.handleRecipeChange}
                     delete={this.handleRecipeDelete}
                     recipeName={recipe.name}
                     ingridients={recipe.ingridients}
-                    onEdit={this.handleEdit} />
+                    onEdit={this.handleEdit}
+                    name={this.state.currentName}
+                    onRecipeSubmit={this.handleRecipeSubmit}
+                     />
             );
 
         return (

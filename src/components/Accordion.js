@@ -16,12 +16,11 @@ class Accordion extends React.Component {
         }
     }
 
-
-
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
             <p key={guid()}> {ingridient} </p>
         );
+
         return (
             <div className="recipe_accordion">
                 <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
@@ -32,12 +31,15 @@ class Accordion extends React.Component {
                                 id={this.props.id}
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
-                                onRecipeChange={(name, e) => this.props.onEdit(name, e)}
+                                onRecipeChange={(name, e) => {
+                                    this.props.onEdit(name, e, this.props.id)
+                                }}
+                                onRecipeSubmit={(e) => this.props.onRecipeSubmit(e)}
                                 />
                 </div>
             </div>
-        );
-    };
+            );
+        };
 }
 
 export default Accordion;
