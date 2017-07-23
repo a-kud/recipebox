@@ -39,6 +39,10 @@ class RecipeBox extends React.Component {
 
     }
 
+    handleRecipeChange(e) {
+        alert(e);
+    }
+
     render() {
 
         let recipes = this.state.recipes.slice(),
@@ -56,7 +60,9 @@ class RecipeBox extends React.Component {
                 <div className="background">
                     {recipesList}
                 </div>
-                <AddRecipe onRecipeSubmit={this.handleRecipeSubmit} />
+                <AddRecipe onRecipeSubmit={this.handleRecipeSubmit}
+                           onRecipeChange={this.handleRecipeChange}
+                           />
             </div>
         );
     };
