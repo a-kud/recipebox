@@ -32,7 +32,7 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           value={"foo"}
+                           value={`${this.props.recipe}`}
                            required
                            onChange={this.handleChange}
                            />
