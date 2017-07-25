@@ -16,6 +16,10 @@ class Accordion extends React.Component {
         }
     }
 
+    shouldComponentUpdate() {
+        return false;
+    }
+
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
             <p key={guid()}> {ingridient} </p>
@@ -28,6 +32,7 @@ class Accordion extends React.Component {
                     <section className="recipe_ingredients">{ingridients}</section>
                     <DeleteRecipe id={this.props.id} delete={ (id) => this.props.delete(id) }/>
                     <AddRecipe  actionTitle={"Edit Recipe"}
+                                action={"edit"}
                                 id={this.props.id}
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
