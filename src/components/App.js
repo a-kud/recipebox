@@ -39,17 +39,6 @@ class RecipeBox extends React.Component {
 
     }
 
-    handleRecipeChange(e) {
-        let recipes = this.state.recipes.slice();
-
-        recipes.push({
-            name: e.target[0].value,
-            ingridients: e.target[1].value.split(","),
-            id: guid(),
-        });
-
-        this.setState({recipes: recipes});
-    }
 
     render() {
 
@@ -70,7 +59,6 @@ class RecipeBox extends React.Component {
                 </div>
                 <AddRecipe recipe={recipes[recipes.length-1]}
                            onRecipeSubmit={this.handleRecipeSubmit}
-                           onRecipeChange={this.handleRecipeChange}
                            />
             </div>
         );

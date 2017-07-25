@@ -13,7 +13,6 @@ class AddRecipe extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
-        this.handleRecipeChange = this.handleRecipeChange.bind(this);
     }
 
     handleClick() {
@@ -29,10 +28,6 @@ class AddRecipe extends React.Component {
         this.props.onRecipeSubmit(e);
     }
 
-    handleRecipeChange(e) {
-        this.props.onRecipeChange(e);
-    }
-
   render() {
     return <div>
     <button  onClick={() => this.handleClick() }> Add Recipe </button>
@@ -42,7 +37,7 @@ class AddRecipe extends React.Component {
           <ModalDialog onClose={ () => this.handleClose() }>
             <RecipeForm recipe={this.props.recipe}
                         handleFormSubmit={this.handleRecipeSubmit}
-                        handleChange={this.handleRecipeChange}/>
+                        />
           </ModalDialog>
         </ModalContainer>
       }
