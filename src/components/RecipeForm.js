@@ -5,7 +5,6 @@ class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleSubmitClick = this.handleSubmitClick.bind(this);
         this.handleChangeFor = this.handleChangeFor.bind(this);
     }
 
