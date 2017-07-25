@@ -8,7 +8,6 @@ class AddRecipe extends React.Component {
         super(props);
         this.state = {
           isShowingModal: false,
-          currentName: ""
       };
 
         this.handleClick = this.handleClick.bind(this);
@@ -31,11 +30,7 @@ class AddRecipe extends React.Component {
     }
 
     handleRecipeChange(propName, e) {
-        if (this.props.action == "edit") {
-            setState({currentName: propName})
-        } else {
-            this.props.onRecipeChange(propName, e);
-        }
+        this.props.onRecipeChange(propName, e);
     }
 
   render() {

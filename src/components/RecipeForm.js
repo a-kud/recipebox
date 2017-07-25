@@ -4,6 +4,9 @@ import Accordion from "./Accordion";
 class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentName: ""
+        }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleChangeFor = this.handleChangeFor.bind(this);
     }
@@ -14,7 +17,11 @@ class RecipeForm extends React.Component {
     }
 
     handleChangeFor(propName, e) {
-        this.props.handleRecipeChange(propName, e);
+        if (this.props.action == "edit") {
+            this.setState({[propName]: e.target.value})
+        } else {
+            this.props.handleRecipeChange(propName, e);
+        }
     }
 
     render() {
@@ -27,7 +34,7 @@ class RecipeForm extends React.Component {
                     <input id="recipe_name"
                            type="text"
                            onChange={ e => this.handleChangeFor("currentName", e) }
-                           value={this.props.name}
+                           value={this.props.action == "add" ? this.props.name : this.state.currentName}
                            required
                            />
                 </label>
