@@ -4,10 +4,6 @@ import Accordion from "./Accordion";
 class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentName: "",
-            currentIngridients: "",
-        }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleChangeFor = this.handleChangeFor.bind(this);
     }
@@ -15,15 +11,15 @@ class RecipeForm extends React.Component {
     handleFormSubmit(e) {
         e.preventDefault();
         this.props.handleFormSubmit(e);
-        
+
     }
 
     handleChangeFor(propName, e) {
-        if (this.props.action == "edit") {
-            this.setState({[propName]: e.target.value})
-        } else {
+        // if (this.props.action == "edit") {
+        //     this.setState({[propName]: e.target.value})
+        // } else {
             this.props.handleRecipeChange(propName, e);
-        }
+        // }
     }
 
     render() {
@@ -36,7 +32,7 @@ class RecipeForm extends React.Component {
                     <input id="recipe_name"
                            type="text"
                            onChange={ e => this.handleChangeFor("currentName", e) }
-                           value={this.props.action == "add" ? this.props.name : this.state.currentName}
+                           value={this.props.name} // this.props.action == "add" ? this.props.name : this.state.currentName
                            required
                            />
                 </label>
@@ -45,10 +41,10 @@ class RecipeForm extends React.Component {
                               rows="4"
                               placeholder="Comma,separated"
                               onChange={ e => this.handleChangeFor("currentIngridients", e) }
-                              value={this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients}
+                              value={this.props.ingridients} //this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients
                               required></textarea>
                 </label>
-                <input type="submit" value="Add Recipe" />
+                <input type="submit" value={this.props.actionTitle} />
             </form>
         );
     }

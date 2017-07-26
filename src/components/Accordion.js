@@ -16,9 +16,7 @@ class Accordion extends React.Component {
         }
     }
 
-    shouldComponentUpdate() {
-        return false;
-    }
+
 
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
@@ -37,7 +35,8 @@ class Accordion extends React.Component {
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
                                 onRecipeChange={(name, e) => {
-                                    this.props.onEdit(name, e, this.props.id)
+                                    //this.props.onEdit(name, e, this.props.id)
+                                    this.props.onRecipeChange(name, e)
                                 }}
                                 onRecipeSubmit={(e) => this.props.onRecipeSubmit(e)}
                                 />
