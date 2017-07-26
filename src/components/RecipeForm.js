@@ -5,7 +5,8 @@ class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentName: ""
+            currentName: "",
+            currentIngridients: "",
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleChangeFor = this.handleChangeFor.bind(this);
@@ -14,6 +15,7 @@ class RecipeForm extends React.Component {
     handleFormSubmit(e) {
         e.preventDefault();
         this.props.handleFormSubmit(e);
+        
     }
 
     handleChangeFor(propName, e) {
@@ -43,7 +45,7 @@ class RecipeForm extends React.Component {
                               rows="4"
                               placeholder="Comma,separated"
                               onChange={ e => this.handleChangeFor("currentIngridients", e) }
-                              value={this.props.ingridients}
+                              value={this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients}
                               required></textarea>
                 </label>
                 <input type="submit" value="Add Recipe" />
