@@ -16,8 +16,6 @@ class Accordion extends React.Component {
         }
     }
 
-
-
     render() {
         let ingridients = this.props.ingridients.map( ingridient =>
             <p key={guid()}> {ingridient} </p>
@@ -25,21 +23,30 @@ class Accordion extends React.Component {
 
         return (
             <div className="recipe_accordion">
-                <button className="accordion" onClick={(e) => this.handleClick(e)}>{this.props.recipeName}</button>
+                <button
+                    className="accordion"
+                    onClick={(e) => this.handleClick(e)}>
+                        {this.props.recipeName}
+                </button>
                 <div className="panel">
-                    <section className="recipe_ingredients">{ingridients}</section>
-                    <DeleteRecipe id={this.props.id} delete={ (id) => this.props.delete(id) }/>
+                    <section className="recipe_ingredients">
+                        {ingridients}
+                    </section>
+                    <DeleteRecipe
+                        id={this.props.id}
+                        delete={ (id) => this.props.delete(id) }/>
                     <AddRecipe  actionTitle={"Edit Recipe"}
                                 action={"edit"}
                                 id={this.props.id}
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
                                 onRecipeChange={(name, e) => {
-                                    //this.props.onEdit(name, e, this.props.id)
                                     this.props.onRecipeChange(name, e)
                                 }}
-                                onRecipeSubmit={(e, ...args) => this.props.onRecipeSubmit(e, ...args)}
-                                />
+                                onRecipeSubmit={
+                                    (e, ...args) =>
+                                    this.props.onRecipeSubmit(e, ...args)
+                                } />
                 </div>
             </div>
             );
