@@ -11,9 +11,13 @@ class RecipeForm extends React.Component {
         this.handleChangeFor = this.handleChangeFor.bind(this);
     }
 
-    handleFormSubmit(e) {
+    handleFormSubmit(e, ...args) {
         e.preventDefault();
-        this.props.handleFormSubmit(e);
+        if (this.props.action == "edit") {
+            this.props.handleFormSubmit(e, this.state);
+        } else {
+            this.props.handleFormSubmit(e);
+        }
 
     }
 

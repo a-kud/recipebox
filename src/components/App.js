@@ -20,7 +20,7 @@ class RecipeBox extends React.Component {
 
     }
 
-    handleRecipeSubmit(e) {
+    handleRecipeSubmit(e, ...args) {
         let recipes = this.state.recipes.slice();
 
         recipes.push({
