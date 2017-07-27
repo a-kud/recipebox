@@ -16,16 +16,15 @@ class RecipeBox extends React.Component {
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
         this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
         this.handleRecipeChange = this.handleRecipeChange.bind(this);
-        // this.handleEdit = this.handleEdit.bind(this);
 
     }
 
     handleRecipeSubmit(...args) {
         let recipes = this.state.recipes.slice();
         if(args.length) {
-            let id = args[0];
-            let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
-            recipes[index].name = args[1].editedName;
+            let id = args[0]; // recipe id
+            let index = recipes.map( (recipe) => recipe.id ).indexOf(id); // find index of recipe by its id
+            recipes[index].name = args[1].editedName; // args[1] - edited recipe data 
             recipes[index].ingridients = args[1].editedIngridients.split(",");
         } else {
             recipes.push({
@@ -44,7 +43,7 @@ class RecipeBox extends React.Component {
     handleRecipeDelete(id) {
 
         let recipes = this.state.recipes.slice();
-        let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
+        let index = recipes.map( (recipe) => recipe.id ).indexOf(id); // find index of recipe by its id
 
         recipes.splice(index, 1);
         this.setState({recipes: recipes});
@@ -58,26 +57,6 @@ class RecipeBox extends React.Component {
 
         this.setState({[propName]: value})
     }
-
-    // handleEdit(propName, e, id) {
-    //     let value = e.target.value;
-    //     let recipes = this.state.recipes.slice();
-    //     let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
-    //     // let name = recipes[index].name
-    //
-    //     if (propName == "currentName") {
-    //         recipes[index].name = value;
-    //     } else {
-    //         recipes[index].ingridients = value.split(",");
-    //     }
-    //
-    //
-    //     this.setState({
-    //         [propName]: value,
-    //         recipes: recipes
-    //     })
-
-    // }
 
     render() {
 

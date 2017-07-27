@@ -31,8 +31,8 @@ class RecipeForm extends React.Component {
     }
 
     render() {
-
         let isActionAdd = this.props.action == "add";
+
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
                 <h1> {this.props.actionTitle} </h1>
@@ -47,23 +47,27 @@ class RecipeForm extends React.Component {
                                    this.handleChangeFor("editedName", e)
                                }
                            }}
-                           value={isActionAdd ? this.props.name : this.state.editedName} // this.props.action == "add" ? this.props.name : this.state.currentName
+                           value={isActionAdd ?
+                               this.props.name : this.state.editedName} // this.props.action == "add" ? this.props.name : this.state.currentName
                            required
                            />
                 </label>
                 <label htmlFor="ingridients"> Ingridients
-                    <textarea id="ingridients"
-                              rows="4"
-                              placeholder="Comma,separated"
-                              onChange={ e => {
-                                  if (isActionAdd) {
-                                      this.handleChangeFor("currentIngridients", e)
-                                  } else {
-                                      this.handleChangeFor("editedIngridients", e)
-                                  }
-                              } }
-                              value={isActionAdd ? this.props.ingridients : this.state.editedIngridients} //this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients
-                              required></textarea>
+                    <textarea
+                        id="ingridients"
+                        rows="4"
+                        placeholder="Comma,separated"
+                        onChange={ e => {
+                            if (isActionAdd) {
+                                this.handleChangeFor("currentIngridients", e)
+                            } else {
+                                this.handleChangeFor("editedIngridients", e)
+                            }
+                        }}
+                        value={isActionAdd ?
+                          this.props.ingridients : this.state.editedIngridients} //this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients
+                        required>
+                    </textarea>
                 </label>
                 <input type="submit" value={this.props.actionTitle} />
             </form>
