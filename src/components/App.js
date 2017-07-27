@@ -22,7 +22,7 @@ class RecipeBox extends React.Component {
 
     handleRecipeSubmit(e, ...args) {
         let recipes = this.state.recipes.slice();
-
+         {console.log(args.length)}
         recipes.push({
             name: e.target[0].value,
             ingridients: e.target[1].value.split(","),
