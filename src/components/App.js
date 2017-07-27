@@ -11,6 +11,7 @@ class RecipeBox extends React.Component {
             recipes: [],
             currentName: "",
             currentIngridients: "",
+            editedName: "",
         };
 
         this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
@@ -86,7 +87,7 @@ class RecipeBox extends React.Component {
                     recipeName={recipe.name}
                     ingridients={recipe.ingridients}
                     onEdit={this.handleEdit}
-                    name={this.state.currentName}
+                    editedName={this.state.editedtName}
                     onRecipeSubmit={this.handleRecipeSubmit}
                     onRecipeChange={this.handleRecipeChange}
                      />

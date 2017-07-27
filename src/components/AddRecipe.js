@@ -44,6 +44,7 @@ class AddRecipe extends React.Component {
                         action={this.props.action}
                         handleFormSubmit={this.handleRecipeSubmit}
                         name={this.props.name}
+                        editedName={this.props.editedName}
                         id={this.props.id}
                         ingridients={this.props.ingridients}
                         handleRecipeChange={this.handleRecipeChange}

@@ -32,7 +32,7 @@ class RecipeForm extends React.Component {
                     <input id="recipe_name"
                            type="text"
                            onChange={ e => this.handleChangeFor("currentName", e) }
-                           value={this.props.name} // this.props.action == "add" ? this.props.name : this.state.currentName
+                           value={this.props.action == "add" ? this.props.name : this.props.editedName} // this.props.action == "add" ? this.props.name : this.state.currentName
                            required
                            />
                 </label>

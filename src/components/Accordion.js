@@ -34,6 +34,7 @@ class Accordion extends React.Component {
                                 id={this.props.id}
                                 name={this.props.recipeName}
                                 ingridients={this.props.ingridients}
+                                editedName={this.props.editedName}
                                 onRecipeChange={(name, e) => {
                                     //this.props.onEdit(name, e, this.props.id)
                                     this.props.onRecipeChange(name, e)
