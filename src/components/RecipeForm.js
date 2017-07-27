@@ -24,6 +24,7 @@ class RecipeForm extends React.Component {
 
     render() {
 
+        let isActionAdd = this.props.action == "add";
         return (
             <form id="recipe_submit" onSubmit={this.handleFormSubmit}>
                 <h1> {this.props.actionTitle} </h1>
@@ -31,8 +32,14 @@ class RecipeForm extends React.Component {
                 <label htmlFor="recipe_name"> Recipe
                     <input id="recipe_name"
                            type="text"
-                           onChange={ e => this.handleChangeFor("currentName", e) }
-                           value={this.props.action == "add" ? this.props.name : this.props.editedName} // this.props.action == "add" ? this.props.name : this.state.currentName
+                           onChange={ e => {
+                               if (isActionAdd) {
+                                   this.handleChangeFor("currentName", e)
+                               } else {
+                                   this.handleChangeFor("editedName", e)
+                               }
+                           }}
+                           value={isActionAdd ? this.props.name : this.props.editedName} // this.props.action == "add" ? this.props.name : this.state.currentName
                            required
                            />
                 </label>
