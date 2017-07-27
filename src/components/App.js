@@ -20,21 +20,25 @@ class RecipeBox extends React.Component {
 
     }
 
-    handleRecipeSubmit(e, ...args) {
+    handleRecipeSubmit(...args) {
         let recipes = this.state.recipes.slice();
-         {console.log(args.length)}
-        recipes.push({
-            name: e.target[0].value,
-            ingridients: e.target[1].value.split(","),
-            id: guid(),
-        });
-
+        if(args.length) {
+            let id = args[0];
+            let index = recipes.map( (recipe) => recipe.id ).indexOf(id);
+            recipes[index].name = args[1].editedName;
+            recipes[index].ingridients = args[1].editedIngridients.split(",");
+        } else {
+            recipes.push({
+                name: this.state.currentName,
+                ingridients: this.state.currentIngridients.split(","),
+                id: guid(),
+            });
+        }
         this.setState({
             recipes: recipes,
             currentName: "",
             currentIngridients: ""
         });
-
     }
 
     handleRecipeDelete(id) {

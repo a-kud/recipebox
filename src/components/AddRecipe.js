@@ -24,9 +24,9 @@ class AddRecipe extends React.Component {
         this.setState({isShowingModal: false});
     }
 
-    handleRecipeSubmit(e, ...args) {
+    handleRecipeSubmit(...args) {
         this.handleClose();
-        this.props.onRecipeSubmit(e, ...args);
+        this.props.onRecipeSubmit(...args);
     }
 
     handleRecipeChange(propName, e) {

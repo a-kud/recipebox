@@ -5,7 +5,8 @@ class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editedName: "",
+            editedName: this.props.name,
+            editedIngridients: this.props.ingridients,
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleChangeFor = this.handleChangeFor.bind(this);
@@ -14,9 +15,9 @@ class RecipeForm extends React.Component {
     handleFormSubmit(e, ...args) {
         e.preventDefault();
         if (this.props.action == "edit") {
-            this.props.handleFormSubmit(e, this.state);
+            this.props.handleFormSubmit(this.props.id, this.state);
         } else {
-            this.props.handleFormSubmit(e);
+            this.props.handleFormSubmit();
         }
 
     }
@@ -54,8 +55,14 @@ class RecipeForm extends React.Component {
                     <textarea id="ingridients"
                               rows="4"
                               placeholder="Comma,separated"
-                              onChange={ e => this.handleChangeFor("currentIngridients", e) }
-                              value={this.props.ingridients} //this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients
+                              onChange={ e => {
+                                  if (isActionAdd) {
+                                      this.handleChangeFor("currentIngridients", e)
+                                  } else {
+                                      this.handleChangeFor("editedIngridients", e)
+                                  }
+                              } }
+                              value={isActionAdd ? this.props.ingridients : this.state.editedIngridients} //this.props.action == "add" ? this.props.ingridients : this.state.currentIngridients
                               required></textarea>
                 </label>
                 <input type="submit" value={this.props.actionTitle} />
