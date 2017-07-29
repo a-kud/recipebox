@@ -35,7 +35,7 @@ class AddRecipe extends React.Component {
 
   render() {
     return <div>
-    <button  onClick={() => this.handleClick() }>
+    <button className="shadow-bottom"  onClick={() => this.handleClick() }>
         {this.props.actionTitle}
     </button>
       {

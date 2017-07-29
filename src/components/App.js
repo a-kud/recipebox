@@ -24,7 +24,7 @@ class RecipeBox extends React.Component {
         if(args.length) {
             let id = args[0]; // recipe id
             let index = recipes.map( (recipe) => recipe.id ).indexOf(id); // find index of recipe by its id
-            recipes[index].name = args[1].editedName; // args[1] - edited recipe data 
+            recipes[index].name = args[1].editedName; // args[1] - edited recipe data
             recipes[index].ingridients = args[1].editedIngridients.split(",");
         } else {
             recipes.push({
@@ -75,7 +75,7 @@ class RecipeBox extends React.Component {
 
         return (
             <div>
-                <div className="background">
+                <div className="background shadow-bottom">
                     {recipesList}
                 </div>
                 <AddRecipe actionTitle={"Add Recipe"}
