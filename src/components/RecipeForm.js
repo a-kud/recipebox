@@ -69,7 +69,7 @@ class RecipeForm extends React.Component {
                         required>
                     </textarea>
                 </label>
-                <input type="submit" value={this.props.actionTitle} />
+                <input className="btn-recipe-action" type="submit" value={this.props.actionTitle} />
             </form>
         );
     }
